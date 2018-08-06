@@ -1,4 +1,4 @@
-package lwh.coding.inerview;
+package lwh.codeguide;
 
 //打印一个字符串的所有子串,包括空串
 public class PrintAllSubSequence {

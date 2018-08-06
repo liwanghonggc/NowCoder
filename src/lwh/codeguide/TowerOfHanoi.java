@@ -1,4 +1,4 @@
-package lwh.coding.inerview;
+package lwh.codeguide;
 
 public class TowerOfHanoi {
 

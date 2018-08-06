@@ -1,4 +1,4 @@
-package lwh.coding.inerview;
+package lwh.codeguide;
 
 
 //判断str2是不是由str1循环右移得到的
