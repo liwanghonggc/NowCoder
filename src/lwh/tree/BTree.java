@@ -30,7 +30,7 @@ public class BTree {
 	}
 	
 	//前序递归遍历
-	private void preOrder(Node root){
+	public void preOrder(Node root){
 		if(root != null){
 			System.out.print(root.e + ",");
 			preOrder(root.lchild);
