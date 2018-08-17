@@ -62,8 +62,7 @@ public class MyArraySort {
         int tail = left - 1;
         for(int i = left; i < right; i++){
             if(arr[i] <= pivot){
-                tail++;
-                swap(arr, tail, i);
+                swap(arr, ++tail, i);
             }
         }
         swap(arr, ++tail, right);
