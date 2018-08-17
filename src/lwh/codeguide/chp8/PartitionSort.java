@@ -51,9 +51,10 @@ public class PartitionSort {
         int u = 0;
         int i = 1;
         while(i != arr.length){
-            if(arr[i++] != arr[u]){
-                swap(arr, ++u, i - 1);
+            if(arr[i] != arr[u]){
+                swap(arr, ++u, i);
             }
+            i++;
         }
     }
 }
