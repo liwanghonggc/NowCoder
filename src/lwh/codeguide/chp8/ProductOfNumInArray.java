@@ -14,6 +14,7 @@ public class ProductOfNumInArray {
         if(arr == null || arr.length < 2){
             return null;
         }
+
         int count = 0;
         int allPro = 1;
         int[] res = new int[arr.length];
