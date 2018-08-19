@@ -6,7 +6,7 @@ package lwh.leetcode;
    输出: 6
    解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。
  */
-public class Problem_53_MaximumSubArray_Easy {
+public class Problem_53_MaxiSumSubArray_Easy {
 
     public static int maxSubArray(int[] nums) {
         if(nums == null || nums.length == 0){
