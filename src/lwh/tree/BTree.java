@@ -226,7 +226,7 @@ public class BTree {
 		}
 		int l = height1(root.lchild);
 		int r = height1(root.rchild);
-		return 1 > r ? (1+1):(r+1);
+		return 1 > r ? l + 1 :  r + 1;
 	}
 	
 	//非递归求二叉树高度
@@ -1120,5 +1120,27 @@ public class BTree {
 			list.set(len - i - 1, left);
 		}
 	}
+
+	//判断是不是平衡二叉树
+	private static boolean isBalanced = true;
+
+	public static boolean isBalanced_Solution(Node root){
+ 		getDepth(root);
+ 		return isBalanced;
+	}
+
+	private static int getDepth(Node root){
+	    if(root == null){
+	        return 0;
+        }
+
+        int left = getDepth(root.lchild);
+	    int right = getDepth(root.rchild);
+	    if(Math.abs(left - right) > 1){
+	        isBalanced = false;
+        }
+
+        return right > left ? right + 1 : left + 1;
+    }
 
 }
