@@ -1,7 +1,9 @@
 package lwh.PointOffer;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 
 /** 滑动窗口的最大值 **/
 public class Problem59_MaxValueOfQueue1 {
@@ -11,6 +13,9 @@ public class Problem59_MaxValueOfQueue1 {
         int w = 3;
         int[] maxWindow = getMaxWindow(arr, w);
         System.out.println(Arrays.toString(maxWindow));
+
+        List<Integer> res = new ArrayList<>();
+
     }
 
     private static int[] getMaxWindow(int[] arr, int w){
