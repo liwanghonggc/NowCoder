@@ -21,6 +21,7 @@ public class Problem57_SumEqualToS2 {
                 printSeq(small, big);
             }
 
+            /** 大于的话将small向右移动,big不变 **/
             while(curSum > sum && small < mid){
                 curSum -= small;
                 small++;
@@ -30,6 +31,7 @@ public class Problem57_SumEqualToS2 {
                 }
             }
 
+            /** 否则将big向右移动,small不变 **/
             big++;
             curSum += big;
         }
