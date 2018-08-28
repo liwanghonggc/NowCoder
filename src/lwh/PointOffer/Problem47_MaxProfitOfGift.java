@@ -1,6 +1,5 @@
 package lwh.PointOffer;
 
-import java.util.Arrays;
 
 public class Problem47_MaxProfitOfGift {
 
