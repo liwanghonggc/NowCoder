@@ -1,10 +1,6 @@
 package lwh.PointOffer;
 
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-
 public class Problem45_ConvertArrayToMinNum {
 
     public static void main(String[] args) {
