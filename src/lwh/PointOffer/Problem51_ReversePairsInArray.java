@@ -24,7 +24,6 @@ public class Problem51_ReversePairsInArray {
 
     private static int inversePairs(int[] arr, int[] copy, int start, int end) {
         if(start == end){
-            copy[start] = arr[start];
             return 0;
         }
 
