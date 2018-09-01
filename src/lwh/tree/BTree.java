@@ -1,4 +1,4 @@
- package lwh.tree;
+package lwh.tree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -1141,6 +1141,34 @@ public class BTree {
         }
 
         return right > left ? right + 1 : left + 1;
+    }
+
+    /** 剑指offer34,二叉树中和为某一值的路径 **/
+    public void findPath(int k){
+        if(root == null){
+            return;
+        }
+        Stack<Integer> stack = new Stack<>();
+        findPathRecur(root, k, stack);
+    }
+
+    private void findPathRecur(Node p, int k, Stack<Integer> stack) {
+        if(p == null){
+            return;
+        }
+        if(p.lchild == null && p.rchild == null){
+            if(p.e == k){
+                for(int i : stack){
+                    System.out.print(i + ", ");
+                }
+                System.out.println(p.e);
+            }
+        }else{
+            stack.push(p.e);
+            findPathRecur(p.lchild, k - p.e, stack);
+            findPathRecur(p.rchild, k - p.e, stack);
+            stack.pop();
+        }
     }
 
 }
