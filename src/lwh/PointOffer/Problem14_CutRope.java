@@ -31,5 +31,4 @@ public class Problem14_CutRope {
         int timesOf2 = (len - timesOf3 * 3) / 2;
         return (int)(Math.pow(3, timesOf3) * Math.pow(2, timesOf2));
     }
-
 }
