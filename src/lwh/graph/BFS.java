@@ -14,6 +14,7 @@ public class BFS {
 		
 		//set用来判断某个节点是否已经被遍历过
 		HashSet<Node> set = new HashSet<>();
+
 		
 		queue.add(node);
 		set.add(node);
