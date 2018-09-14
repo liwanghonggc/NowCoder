@@ -8,17 +8,15 @@ package lwh.PointOffer;
 public class Problem15_NumOfOne {
 
     public static void main(String[] args) {
-        int num = 9;
+        int num = 8;
         System.out.println(numOfOne(num));
     }
 
     private static int numOfOne(int num) {
         int count = 0;
         while (num > 0){
-            if((num & 1) == 1){
-                count++;
-            }
-            num = num >> 1;
+            ++count;
+            num = (num - 1) & num;
         }
         return count;
     }
