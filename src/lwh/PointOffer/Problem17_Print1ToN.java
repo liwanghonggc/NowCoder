@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class Problem17_Print1ToN {
 
     public static void main(String[] args) {
-        int num = 3;
+        int num = 10;
         printToMax(num);
     }
 
