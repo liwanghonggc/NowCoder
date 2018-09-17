@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
  * @author lwh
  * @date 2018-09-17
- * @desp
+ * @desp 两个栈实现一个队列
  */
 public class Problem9_TwoStackGetQueue {
 
