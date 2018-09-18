@@ -2,6 +2,9 @@ package lwh.PointOffer;
 
 import java.util.Stack;
 
+/**
+ * 栈的压入、弹出序列
+ */
 public class Problem31_StackPusPopSeq {
 
     public static void main(String[] args) {
