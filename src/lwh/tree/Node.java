@@ -2,9 +2,9 @@ package lwh.tree;
 
 public class Node {
 
-	protected int e;
-	protected Node lchild;
-	protected Node rchild;
+	public int e;
+	public Node lchild;
+	public Node rchild;
 	
 	public Node(){}
 	

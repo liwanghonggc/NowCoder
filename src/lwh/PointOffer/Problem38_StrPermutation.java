@@ -1,5 +1,8 @@
 package lwh.PointOffer;
 
+/**
+ * 字符串的全排列
+ */
 public class Problem38_StrPermutation {
 
     public static void main(String[] args) {
