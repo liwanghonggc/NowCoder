@@ -1,6 +1,9 @@
 package lwh.PointOffer;
 
 
+/**
+ * 把数组排成最小的数
+ */
 public class Problem45_ConvertArrayToMinNum {
 
     public static void main(String[] args) {
