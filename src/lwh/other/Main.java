@@ -1,7 +1,5 @@
 package lwh.other;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author lwh
@@ -11,16 +9,8 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.add(4);
-
-        for(int i = list.size() - 1; i >= 0; i--){
-            list.remove(2);
-        }
-
-        System.out.println(list.toString());
+        Byte var1 = 126;
+        Byte var2 = 127;
+        //Byte var3 = var1 + var2;
     }
 }

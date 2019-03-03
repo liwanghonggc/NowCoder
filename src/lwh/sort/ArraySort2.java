@@ -1,6 +1,6 @@
 package lwh.sort;
 
-public class MyArraySort {
+public class ArraySort2 {
 
     // 冒泡
     public static void bubbleSort(int[] arr){
