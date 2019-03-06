@@ -18,6 +18,9 @@ public class ArraySort3 {
         fastSort2(arr, 0, arr.length - 1);
     }
 
+    /**
+     * 递归快速排序
+     */
     private static void fastSort1(int[] arr, int left, int right) {
         if (left >= right) {
             return;
@@ -44,6 +47,9 @@ public class ArraySort3 {
         return tail + 1;
     }
 
+    /**
+     * 非递归快速排序
+     */
     private static void fastSort2(int[] a, int low, int high) {
         if(low >= high){
             return;
@@ -68,6 +74,52 @@ public class ArraySort3 {
                 stack.push(pivot + 1);
                 stack.push(high);
             }
+        }
+    }
+
+    /**
+     * 堆排序
+     */
+    public static void heapSort(int[] arr){
+        if(arr == null || arr.length < 2){
+            return;
+        }
+        buildHeap(arr);
+        int heapSize = arr.length;
+        while (heapSize > 1){
+            heapSize--;
+            int temp = arr[heapSize];
+            arr[heapSize] = arr[0];
+            arr[0] = temp;
+            heapify(arr, 0, heapSize);
+        }
+    }
+
+    private static void buildHeap(int[] arr) {
+        int heapSize = arr.length;
+        for(int i = heapSize / 2 - 1; i >= 0; i--){
+            heapify(arr, i, heapSize);
+        }
+    }
+
+    private static void heapify(int[] arr, int i, int heapSize) {
+        int lChild = 2 * i + 1;
+        int rChild = 2 * i + 2;
+
+        int max = i;
+
+        if(lChild < heapSize && arr[lChild] > arr[max]){
+            max = lChild;
+        }
+        if(rChild < heapSize && arr[rChild] > arr[max]){
+            max = rChild;
+        }
+
+        if(max != i){
+            int temp = arr[max];
+            arr[max] = arr[i];
+            arr[i] = temp;
+            heapify(arr, max, heapSize);
         }
     }
 }

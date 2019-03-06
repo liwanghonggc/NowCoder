@@ -5,7 +5,7 @@ public class SortTest {
 	public static void main(String[] args) {
 		int[] a = {5,4,3,1,7,6,9,8,2};
 		
-		ArraySort3.fastSort(a);
+		ArraySort3.heapSort(a);
 		print(a);
 		
 	}
