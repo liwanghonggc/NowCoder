@@ -13,6 +13,6 @@ public class GraphTest {
 		init();
 		
 		Node node = graph.nodes.get(1);
-		BFS.bfs(node);
+		BFS.dfs(node);
 	}
 }

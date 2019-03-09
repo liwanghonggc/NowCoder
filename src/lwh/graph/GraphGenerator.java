@@ -2,6 +2,7 @@ package lwh.graph;
 
 public class GraphGenerator {
 
+	//Integer[][] matrix = {{1,2,3},{1,4,2},{2,3,4},{2,5,5},{4,3,1},{4,5,6}};
 	public static Graph createGraph(Integer[][] matrix){
 		Graph graph = new Graph();
 		
