@@ -19,7 +19,7 @@ public class StackPusPopSeq {
     }
 
     private static boolean isPushPopSeq(int[] seq1, int[] seq2) {
-        if(seq1 == null || seq2 == null || seq1.length != seq2.length){
+        if (seq1 == null || seq2 == null || seq1.length != seq2.length) {
             return false;
         }
 
@@ -27,14 +27,14 @@ public class StackPusPopSeq {
         int index = 0;
         stack.push(seq1[index++]);
 
-        for(int i = 0; i < seq2.length;){
-            if(seq2[i] == stack.peek()){
+        for (int i = 0; i < seq2.length; ) {
+            if (seq2[i] == stack.peek()) {
                 stack.pop();
                 i++;
-            }else{
-                if(index < seq1.length){
+            } else {
+                if (index < seq1.length) {
                     stack.push(seq1[index++]);
-                }else {
+                } else {
                     return false;
                 }
             }

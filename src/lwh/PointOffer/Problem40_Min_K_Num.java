@@ -10,8 +10,8 @@ public class Problem40_Min_K_Num {
         getMinKNum(arr, 4);
     }
 
-    private static void getMinKNum(int[] arr, int k){
-        if(arr == null || arr.length < k){
+    private static void getMinKNum(int[] arr, int k) {
+        if (arr == null || arr.length < k) {
             return;
         }
 
@@ -22,19 +22,19 @@ public class Problem40_Min_K_Num {
             }
         });
 
-        for(int i = 0; i < k; i++){
+        for (int i = 0; i < k; i++) {
             queue.add(arr[i]);
         }
 
-        for(int i = k; i < arr.length; i++){
+        for (int i = k; i < arr.length; i++) {
             int num = queue.peek();
-            if(arr[i] < num){
+            if (arr[i] < num) {
                 queue.poll();
                 queue.add(arr[i]);
             }
         }
 
-        while(!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             System.out.print(queue.poll() + ", ");
         }
 

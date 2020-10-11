@@ -17,8 +17,8 @@ public class ReverseStackUsingRecursive {
         System.out.println(stack.toString());
     }
 
-    public static void reverse(Stack<Integer> stack){
-        if(stack.isEmpty()){
+    public static void reverse(Stack<Integer> stack) {
+        if (stack.isEmpty()) {
             return;
         }
         int i = getAndRemoveLastElement(stack);
@@ -27,11 +27,11 @@ public class ReverseStackUsingRecursive {
     }
 
     //每次找栈底元素并删除
-    public static int getAndRemoveLastElement(Stack<Integer> stack){
+    public static int getAndRemoveLastElement(Stack<Integer> stack) {
         int result = stack.pop();
-        if(stack.isEmpty()){
+        if (stack.isEmpty()) {
             return result;
-        }else{
+        } else {
             int last = getAndRemoveLastElement(stack);
             stack.push(result);
             return last;

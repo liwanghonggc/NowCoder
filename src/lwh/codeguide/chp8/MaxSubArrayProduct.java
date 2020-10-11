@@ -10,8 +10,8 @@ public class MaxSubArrayProduct {
         System.out.println(getMaxProduct(arr));
     }
 
-    private static double getMaxProduct(double[] arr){
-        if(arr == null || arr.length == 0){
+    private static double getMaxProduct(double[] arr) {
+        if (arr == null || arr.length == 0) {
             return 0;
         }
 
@@ -22,7 +22,7 @@ public class MaxSubArrayProduct {
         double maxEnd = 0;
         double minEnd = 0;
 
-        for(int i = 1; i < arr.length; i++){
+        for (int i = 1; i < arr.length; i++) {
             maxEnd = max * arr[i];
             minEnd = min * arr[i];
             max = Math.max(Math.max(maxEnd, minEnd), arr[i]);

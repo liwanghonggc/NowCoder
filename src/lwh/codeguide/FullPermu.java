@@ -15,18 +15,18 @@ public class FullPermu {
     }
 
     private static void printFullPerm(String str) {
-        if(str == null || str.length() == 0){
+        if (str == null || str.length() == 0) {
             return;
         }
         char[] chs = str.toCharArray();
-        printFullPermRecur(chs,0);
+        printFullPermRecur(chs, 0);
     }
 
     private static void printFullPermRecur(char[] chs, int i) {
-        if(i == chs.length){
+        if (i == chs.length) {
             System.out.println(new String(chs));
         }
-        for(int j = i; j < chs.length; j++){
+        for (int j = i; j < chs.length; j++) {
             swap(chs, i, j);
             printFullPermRecur(chs, i + 1);
             swap(chs, i, j);

@@ -9,7 +9,7 @@ public class Problem_107_BinaryTreeLevelOrderTraversal2_Easy {
 
     public static List<List<Integer>> levelOrderBottom(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
-        if(root == null){
+        if (root == null) {
             return res;
         }
         Queue<TreeNode> q = new LinkedList<>();
@@ -17,19 +17,19 @@ public class Problem_107_BinaryTreeLevelOrderTraversal2_Easy {
         List<Integer> list = new ArrayList<>();
         TreeNode last = root, nlast = null;
 
-        while(!q.isEmpty()){
+        while (!q.isEmpty()) {
             TreeNode p = q.poll();
             list.add(p.val);
 
-            if(p.left != null){
+            if (p.left != null) {
                 q.add(p.left);
                 nlast = p.left;
             }
-            if(p.right != null){
+            if (p.right != null) {
                 q.add(p.right);
                 nlast = p.right;
             }
-            if(p == last){
+            if (p == last) {
                 res.add(list);
                 last = nlast;
                 list = new ArrayList<>();
@@ -37,11 +37,11 @@ public class Problem_107_BinaryTreeLevelOrderTraversal2_Easy {
         }
 
         int len = res.size();
-        for(int i = 0; i < len / 2; i++){
+        for (int i = 0; i < len / 2; i++) {
             List<Integer> left = res.get(i);
-            List<Integer> right = res.get(len-i-1);
+            List<Integer> right = res.get(len - i - 1);
             res.set(i, right);
-            res.set(len-i-1, left);
+            res.set(len - i - 1, left);
         }
         return res;
     }

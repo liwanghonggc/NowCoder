@@ -6,7 +6,7 @@ public class SumOfNumStr {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        while(sc.hasNextLine()){
+        while (sc.hasNextLine()) {
             String str = sc.nextLine();
             int sum = getSumOfNumStr(str);
             System.out.println(sum);
@@ -15,29 +15,29 @@ public class SumOfNumStr {
 
     private static int getSumOfNumStr(String str) {
         int sum = 0, num = 0;
-        if(str == null || str.length() == 0){
+        if (str == null || str.length() == 0) {
             return sum;
         }
 
         char[] ch = str.toCharArray();
         boolean flag = true;
 
-        for(int i = 0; i < ch.length; i++){
+        for (int i = 0; i < ch.length; i++) {
             int cur = ch[i] - '0';
-            if(cur < 0 || cur > 9){
+            if (cur < 0 || cur > 9) {
                 sum += num;
                 num = 0;
 
-                if(ch[i] == '-'){
-                    if(i > 0 && ch[i-1] == '-'){
+                if (ch[i] == '-') {
+                    if (i > 0 && ch[i - 1] == '-') {
                         flag = !flag;
-                    }else{
+                    } else {
                         flag = false;
                     }
-                }else{
+                } else {
                     flag = true;
                 }
-            }else{
+            } else {
                 num = num * 10 + (flag ? cur : -cur);
             }
         }

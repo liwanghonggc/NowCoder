@@ -3,15 +3,15 @@ package lwh.leetcode;
 public class Problem_108_ConvertSortArrBBTree_Easy {
 
     public static TreeNode sortedArrayToBST(int[] nums) {
-        if(nums == null || nums.length == 0){
+        if (nums == null || nums.length == 0) {
             return null;
         }
 
         return getBalanceBSTRecursive(nums, 0, nums.length - 1);
     }
 
-    private static TreeNode getBalanceBSTRecursive(int[] nums, int left, int right){
-        if(left > right){
+    private static TreeNode getBalanceBSTRecursive(int[] nums, int left, int right) {
+        if (left > right) {
             return null;
         }
         int mid = left + (right - left) / 2;

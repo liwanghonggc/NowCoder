@@ -1,6 +1,8 @@
 package lwh.PointOffer;
 
-/** 在0-n-1中查找唯一缺失的数字 **/
+/**
+ * 在0-n-1中查找唯一缺失的数字
+ **/
 public class Problem53_FindOnlyLostNumInSortArray {
 
     public static void main(String[] args) {
@@ -10,7 +12,7 @@ public class Problem53_FindOnlyLostNumInSortArray {
     }
 
     private static int findOnlyLostNum(int[] arr) {
-        if(arr == null || arr.length == 0){
+        if (arr == null || arr.length == 0) {
             return -1;
         }
 
@@ -19,17 +21,17 @@ public class Problem53_FindOnlyLostNumInSortArray {
     }
 
     private static int getIndexRecur(int[] arr, int left, int right) {
-        if(left > right){
+        if (left > right) {
             return -1;
         }
 
         int mid = (left + right) / 2;
-        if(arr[mid] == mid){
+        if (arr[mid] == mid) {
             left = mid + 1;
-        }else{
-            if(mid == 0 || arr[mid-1] == mid - 1){
+        } else {
+            if (mid == 0 || arr[mid - 1] == mid - 1) {
                 return mid;
-            }else{
+            } else {
                 right = mid - 1;
             }
         }

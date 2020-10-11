@@ -3,33 +3,33 @@ package lwh.leetcode;
 public class Problem_204_CountPrimes_Easy {
 
     public static int countPrimes(int n) {
-        if(n <= 2){
+        if (n <= 2) {
             return 0;
         }
         int count = 0;
-        for(int i = 2; i < n; i++){
-            if(isPrime(i)){
+        for (int i = 2; i < n; i++) {
+            if (isPrime(i)) {
                 count++;
             }
         }
         return count;
     }
 
-    private static boolean isPrime(int num){
-        if(num == 2 || num == 3){
+    private static boolean isPrime(int num) {
+        if (num == 2 || num == 3) {
             return true;
         }
 
         //不在6的倍数两侧的一定不是质数
-        if(num % 6 != 1 && num % 6 != 5){
+        if (num % 6 != 1 && num % 6 != 5) {
             return false;
         }
 
-        int temp = (int)Math.sqrt(num);
+        int temp = (int) Math.sqrt(num);
 
         //在6的倍数两侧的也可能不是质数
-        for(int i = 5; i <= temp; i += 6){
-            if(num % i == 0 || num % (i + 2) == 0){
+        for (int i = 5; i <= temp; i += 6) {
+            if (num % i == 0 || num % (i + 2) == 0) {
                 return false;
             }
         }

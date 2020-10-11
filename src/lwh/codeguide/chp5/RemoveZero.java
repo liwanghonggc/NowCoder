@@ -6,7 +6,7 @@ public class RemoveZero {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        while(sc.hasNext()){
+        while (sc.hasNext()) {
             String str = sc.nextLine();
             int k = Integer.valueOf(sc.nextLine());
 
@@ -17,20 +17,20 @@ public class RemoveZero {
     }
 
     private static String getRemoveStr(String str, int k) {
-        if(str == null || str.length() == 0 || k <= 0){
+        if (str == null || str.length() == 0 || k <= 0) {
             return str;
         }
 
         char[] ch = str.toCharArray();
         int count = 0, start = -1;
 
-        for(int i = 0; i != ch.length; i++){
-            if(ch[i] == '0'){
+        for (int i = 0; i != ch.length; i++) {
+            if (ch[i] == '0') {
                 count++;
                 start = start == -1 ? i : start;
-            }else{
-                if(count == k){
-                    while(count-- != 0){
+            } else {
+                if (count == k) {
+                    while (count-- != 0) {
                         ch[start++] = 0;
                     }
                 }
@@ -39,8 +39,8 @@ public class RemoveZero {
             }
         }
 
-        if(count == k){
-            while(count-- != 0){
+        if (count == k) {
+            while (count-- != 0) {
                 ch[start++] = 0;
             }
         }

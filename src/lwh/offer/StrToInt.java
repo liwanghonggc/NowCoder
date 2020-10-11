@@ -7,24 +7,24 @@ public class StrToInt {
     }
 
     public static int StrToInt(String str) {
-        if(str == null || str.length() == 0){
+        if (str == null || str.length() == 0) {
             return 0;
         }
 
         int res = 0;
         int r = 1;
         char[] chs = str.toCharArray();
-        for(int i = chs.length - 1; i >= 0; i--){
-            if(chs[i] > '0' && chs[i] < '9'){
+        for (int i = chs.length - 1; i >= 0; i--) {
+            if (chs[i] > '0' && chs[i] < '9') {
                 res += (chs[i] - 48) * r;
                 r *= 10;
-            }else if(chs[i] == '+' || chs[i] == '-'){
+            } else if (chs[i] == '+' || chs[i] == '-') {
                 continue;
-            }else {
+            } else {
                 return 0;
             }
         }
-        if(str.startsWith("-")){
+        if (str.startsWith("-")) {
             return 0 - res;
         }
         return res;

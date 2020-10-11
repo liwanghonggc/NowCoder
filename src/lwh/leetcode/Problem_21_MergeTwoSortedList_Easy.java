@@ -3,21 +3,27 @@ package lwh.leetcode;
 public class Problem_21_MergeTwoSortedList_Easy {
 
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        if(l1 == null && l2 == null){ return null;}
-        if(l1 == null){ return l2;}
-        if(l2 == null){ return l1;}
+        if (l1 == null && l2 == null) {
+            return null;
+        }
+        if (l1 == null) {
+            return l2;
+        }
+        if (l2 == null) {
+            return l1;
+        }
 
         ListNode dumpyHead = new ListNode(0);
         ListNode p = l1, q = l2, cur = dumpyHead;
 
-        while (p != null && q != null){
+        while (p != null && q != null) {
             int val = p.val <= q.val ? p.val : q.val;
             ListNode node = new ListNode(val);
             cur.next = node;
             cur = node;
-            if(p.val <= q.val){
+            if (p.val <= q.val) {
                 p = p.next;
-            }else {
+            } else {
                 q = q.next;
             }
         }
@@ -28,9 +34,9 @@ public class Problem_21_MergeTwoSortedList_Easy {
         return dumpyHead.next;
     }
 
-    public static void printList(ListNode head){
+    public static void printList(ListNode head) {
         System.out.print("[");
-        for(ListNode p = head; p != null; p = p.next){
+        for (ListNode p = head; p != null; p = p.next) {
             System.out.print(p.val + ", ");
         }
         System.out.println("]");

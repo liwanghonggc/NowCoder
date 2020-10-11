@@ -1,6 +1,8 @@
 package lwh.PointOffer;
 
-/** 找到字符串的最长无重复子串 **/
+/**
+ * 找到字符串的最长无重复子串
+ **/
 public class Problem48_MaxLenUniqueCharSeq {
 
     public static void main(String[] args) {
@@ -8,14 +10,14 @@ public class Problem48_MaxLenUniqueCharSeq {
         System.out.println(maxUnique(str));
     }
 
-    private static int maxUnique(String str){
-        if(str == null || str.length() == 0){
+    private static int maxUnique(String str) {
+        if (str == null || str.length() == 0) {
             return 0;
         }
 
         char[] chs = str.toCharArray();
         int[] map = new int[256];
-        for(int i = 0; i < 256; i++){
+        for (int i = 0; i < 256; i++) {
             map[i] = -1;
         }
 
@@ -23,7 +25,7 @@ public class Problem48_MaxLenUniqueCharSeq {
         int pre = -1;
         int cur = 0;
 
-        for(int i = 0; i < chs.length; i++){
+        for (int i = 0; i < chs.length; i++) {
             pre = Math.max(pre, map[chs[i]]);
             cur = i - pre;
             len = Math.max(len, cur);

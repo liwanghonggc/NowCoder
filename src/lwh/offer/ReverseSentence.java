@@ -6,12 +6,13 @@ public class ReverseSentence {
         String str = " ";
         System.out.println(ReverseSentence(str));
     }
+
     public static String ReverseSentence(String str) {
-        if(str == null || str.length() == 0){
+        if (str == null || str.length() == 0) {
             return str;
         }
 
-        if(str.trim().equals("")){
+        if (str.trim().equals("")) {
             return str;
         }
 
@@ -19,10 +20,10 @@ public class ReverseSentence {
         String[] s = str.split(" ");
 
         StringBuilder sb = new StringBuilder();
-        for(int i = 0; i < s.length; i++){
+        for (int i = 0; i < s.length; i++) {
             String temp = new StringBuilder(s[i]).reverse().toString();
             sb.append(temp);
-            if(i != s.length - 1){
+            if (i != s.length - 1) {
                 sb.append(" ");
             }
         }

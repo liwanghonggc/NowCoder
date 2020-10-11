@@ -10,20 +10,20 @@ public class MaxSubArraySum {
         System.out.println(getMaxSum(arr));
     }
 
-    private static int getMaxSum(int[] arr){
-        if(arr == null || arr.length == 0){
+    private static int getMaxSum(int[] arr) {
+        if (arr == null || arr.length == 0) {
             return 0;
         }
 
         int maxSum = arr[0];
         int curSum = 0;
 
-        for(int i = 0; i < arr.length; i++){
+        for (int i = 0; i < arr.length; i++) {
             curSum += arr[i];
-            if(curSum > maxSum){
+            if (curSum > maxSum) {
                 maxSum = curSum;
             }
-            if(curSum < 0){
+            if (curSum < 0) {
                 curSum = 0;
             }
         }

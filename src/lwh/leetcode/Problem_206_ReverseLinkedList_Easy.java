@@ -4,7 +4,7 @@ public class Problem_206_ReverseLinkedList_Easy {
 
     //递归方式逆置单链表
     public static ListNode reverseList_1(ListNode head) {
-        if(head == null || head.next == null){
+        if (head == null || head.next == null) {
             return head;
         }
 
@@ -16,11 +16,11 @@ public class Problem_206_ReverseLinkedList_Easy {
 
     //迭代,非递归方式反转单链表
     public static ListNode reverseList_2(ListNode head) {
-        if(head == null || head.next == null){
+        if (head == null || head.next == null) {
             return head;
         }
         ListNode pre = null, p = head, q = head.next;
-        while(q != null){
+        while (q != null) {
             p.next = pre;
             pre = p;
             p = q;
@@ -48,9 +48,9 @@ public class Problem_206_ReverseLinkedList_Easy {
         printList(newHead);
     }
 
-    public static void printList(ListNode head){
+    public static void printList(ListNode head) {
         System.out.print("[");
-        for(ListNode p = head; p != null; p = p.next){
+        for (ListNode p = head; p != null; p = p.next) {
             System.out.print(p.val + ", ");
         }
         System.out.println("]");

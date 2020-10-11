@@ -32,35 +32,43 @@ class MyQueue {
         help = new Stack<>();
     }
 
-    /** Push element x to the back of queue. */
+    /**
+     * Push element x to the back of queue.
+     */
     public void push(int x) {
-        while(!help.isEmpty()){
+        while (!help.isEmpty()) {
             stack.push(help.pop());
         }
         stack.push(x);
     }
 
-    /** Removes the element from in front of queue and returns that element. */
+    /**
+     * Removes the element from in front of queue and returns that element.
+     */
     public int pop() {
-        if(help.isEmpty()){
-            while(!stack.isEmpty()){
+        if (help.isEmpty()) {
+            while (!stack.isEmpty()) {
                 help.push(stack.pop());
             }
         }
         return help.pop();
     }
 
-    /** Get the front element. */
+    /**
+     * Get the front element.
+     */
     public int peek() {
-        if(help.isEmpty()){
-            while(!stack.isEmpty()){
+        if (help.isEmpty()) {
+            while (!stack.isEmpty()) {
                 help.push(stack.pop());
             }
         }
         return help.peek();
     }
 
-    /** Returns whether the queue is empty. */
+    /**
+     * Returns whether the queue is empty.
+     */
     public boolean empty() {
         return help.isEmpty() && stack.isEmpty();
     }

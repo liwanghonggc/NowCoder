@@ -1,6 +1,8 @@
 package lwh.PointOffer;
 
-/** 时间复杂度O(logn) **/
+/**
+ * 时间复杂度O(logn)
+ **/
 public class Problem53_FindNumInSortArray {
 
     public static void main(String[] args) {
@@ -10,7 +12,7 @@ public class Problem53_FindNumInSortArray {
     }
 
     private static int getCountOfNum(int[] arr, int num) {
-        if(arr == null || arr.length == 0){
+        if (arr == null || arr.length == 0) {
             return 0;
         }
 
@@ -18,7 +20,7 @@ public class Problem53_FindNumInSortArray {
         int rightIndex = getLastIndex(arr, num, 0, arr.length - 1);
 
         int count = 0;
-        if(leftIndex > -1 && rightIndex > -1){
+        if (leftIndex > -1 && rightIndex > -1) {
             count = rightIndex - leftIndex + 1;
         }
 
@@ -26,19 +28,19 @@ public class Problem53_FindNumInSortArray {
     }
 
     private static int getFirstIndex(int[] arr, int num, int left, int right) {
-        if(left > right){
+        if (left > right) {
             return -1;
         }
 
         int mid = (left + right) / 2;
-        if(arr[mid] > num){
+        if (arr[mid] > num) {
             right = mid - 1;
-        }else if(arr[mid] < num){
+        } else if (arr[mid] < num) {
             left = mid + 1;
-        }else{
-            if(mid == 0 || (mid > 0 && arr[mid-1] != num)){
+        } else {
+            if (mid == 0 || (mid > 0 && arr[mid - 1] != num)) {
                 return mid;
-            }else{
+            } else {
                 right = mid - 1;
             }
         }
@@ -47,19 +49,19 @@ public class Problem53_FindNumInSortArray {
     }
 
     private static int getLastIndex(int[] arr, int num, int left, int right) {
-        if(left > right){
+        if (left > right) {
             return -1;
         }
 
         int mid = (left + right) / 2;
-        if(arr[mid] > num){
+        if (arr[mid] > num) {
             right = mid - 1;
-        }else if(arr[mid] < num){
+        } else if (arr[mid] < num) {
             left = mid + 1;
-        }else{
-            if(mid == arr.length - 1 || (mid < arr.length - 1 && arr[mid+1] != num)){
+        } else {
+            if (mid == arr.length - 1 || (mid < arr.length - 1 && arr[mid + 1] != num)) {
                 return mid;
-            }else{
+            } else {
                 left = mid + 1;
             }
         }

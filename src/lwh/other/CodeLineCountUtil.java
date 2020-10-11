@@ -17,30 +17,30 @@ public class CodeLineCountUtil {
     }
 
     private static int getLineCountOfCode(File file) {
-        if(file.isFile()){
+        if (file.isFile()) {
             count += getFileCount(file);
-        }else{
+        } else {
             File[] files = file.listFiles();
-            for(File f : files){
+            for (File f : files) {
                 getLineCountOfCode(f);
             }
         }
         return count;
     }
 
-    public static int getFileCount(File file){
+    public static int getFileCount(File file) {
         int num = 0;
         String name = file.getName();
-        if(name != null){
-            if(name.contains("jsp")){
+        if (name != null) {
+            if (name.contains("jsp")) {
                 return num;
             }
-            if(name.endsWith(".java")){
+            if (name.endsWith(".java")) {
                 try {
                     FileInputStream fis = new FileInputStream(file);
                     InputStreamReader isr = new InputStreamReader(fis);
                     BufferedReader br = new BufferedReader(isr);
-                    while((br.readLine()) != null){
+                    while ((br.readLine()) != null) {
                         num++;
                     }
                 } catch (IOException e) {

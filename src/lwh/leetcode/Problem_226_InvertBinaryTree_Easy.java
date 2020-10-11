@@ -7,8 +7,8 @@ public class Problem_226_InvertBinaryTree_Easy {
         return root;
     }
 
-    private static void reverseRecursive(TreeNode root){
-        if(root == null){
+    private static void reverseRecursive(TreeNode root) {
+        if (root == null) {
             return;
         }
         TreeNode temp = root.left;

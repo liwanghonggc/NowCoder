@@ -9,10 +9,10 @@ public class MaxComStrOfTwoStr {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        while(sc.hasNextLine()){
+        while (sc.hasNextLine()) {
             String str1 = sc.nextLine();
             String str2 = sc.nextLine();
-            if(str1 == null || str2 == null || str1.length() == 0 || str2.length() == 0){
+            if (str1 == null || str2 == null || str1.length() == 0 || str2.length() == 0) {
                 System.out.println(0);
                 continue;
             }
@@ -32,22 +32,22 @@ public class MaxComStrOfTwoStr {
 
         int[][] dp = new int[len1][len2];
 
-        for(int i = 0; i < len1; i++){
-            if(str1.charAt(i) == str2.charAt(0)){
+        for (int i = 0; i < len1; i++) {
+            if (str1.charAt(i) == str2.charAt(0)) {
                 dp[i][0] = 1;
             }
         }
 
-        for(int j = 0; j < len2; j++){
-            if(str1.charAt(0) == str2.charAt(j)){
+        for (int j = 0; j < len2; j++) {
+            if (str1.charAt(0) == str2.charAt(j)) {
                 dp[0][j] = 1;
             }
         }
 
-        for(int i = 1; i < len1; i++){
-            for(int j = 1; j < len2; j++){
-                if(str1.charAt(i) == str2.charAt(j)){
-                    dp[i][j] = dp[i-1][j-1] + 1;
+        for (int i = 1; i < len1; i++) {
+            for (int j = 1; j < len2; j++) {
+                if (str1.charAt(i) == str2.charAt(j)) {
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
                 }
             }
         }
@@ -61,9 +61,9 @@ public class MaxComStrOfTwoStr {
         int len2 = dp[0].length;
         int end = 0;
 
-        for(int i = 0; i < len1; i++){
-            for(int j = 0; j < len2; j++){
-                if(dp[i][j] > max){
+        for (int i = 0; i < len1; i++) {
+            for (int j = 0; j < len2; j++) {
+                if (dp[i][j] > max) {
                     end = i;
                     max = dp[i][j];
                 }

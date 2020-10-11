@@ -3,13 +3,13 @@ package lwh.leetcode;
 public class Problem_83_RemoveDuplicatesFromSortedList_Easy {
 
     public static ListNode deleteDuplicates(ListNode head) {
-        if(head == null || head.next == null){
+        if (head == null || head.next == null) {
             return head;
         }
 
         ListNode p = head, q = head.next;
-        while(q != null){
-            if(p.val != q.val){
+        while (q != null) {
+            if (p.val != q.val) {
                 p.next = q;
                 p = q;
             }
@@ -20,9 +20,9 @@ public class Problem_83_RemoveDuplicatesFromSortedList_Easy {
     }
 
 
-    public static void printList(ListNode head){
+    public static void printList(ListNode head) {
         System.out.print("[");
-        for(ListNode p = head; p != null; p = p.next){
+        for (ListNode p = head; p != null; p = p.next) {
             System.out.print(p.val + ", ");
         }
         System.out.println("]");

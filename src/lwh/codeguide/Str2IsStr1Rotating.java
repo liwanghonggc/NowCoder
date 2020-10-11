@@ -10,13 +10,13 @@ public class Str2IsStr1Rotating {
         System.out.println(isRotating(str1, str2));
     }
 
-    public static boolean isRotating(String str1, String str2){
-        if(str1 == null || str2 == null || str1.length() != str2.length()){
+    public static boolean isRotating(String str1, String str2) {
+        if (str1 == null || str2 == null || str1.length() != str2.length()) {
             return false;
         }
 
         str1 = str1 + str1;
-        if(str1.contains(str2)){
+        if (str1.contains(str2)) {
             return true;
         }
         return false;

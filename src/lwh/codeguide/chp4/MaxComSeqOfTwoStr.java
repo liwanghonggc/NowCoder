@@ -9,10 +9,10 @@ public class MaxComSeqOfTwoStr {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        while(sc.hasNextLine()){
+        while (sc.hasNextLine()) {
             String str1 = sc.nextLine();
             String str2 = sc.nextLine();
-            if(str1 == null || str2 == null || str1.length() == 0 || str2.length() == 0){
+            if (str1 == null || str2 == null || str1.length() == 0 || str2.length() == 0) {
                 System.out.println(0);
                 continue;
             }
@@ -36,19 +36,19 @@ public class MaxComSeqOfTwoStr {
 
         dp[0][0] = ch1[0] == ch2[0] ? 1 : 0;
 
-        for(int i = 1; i < len1; i++){
-            dp[i][0] = Math.max(dp[i-1][0], ch1[i] == ch2[0] ? 1 : 0);
+        for (int i = 1; i < len1; i++) {
+            dp[i][0] = Math.max(dp[i - 1][0], ch1[i] == ch2[0] ? 1 : 0);
         }
 
-        for(int j = 1; j < len2; j++){
-            dp[0][j] = Math.max(dp[0][j-1], ch2[j] == ch1[0] ? 1 : 0);
+        for (int j = 1; j < len2; j++) {
+            dp[0][j] = Math.max(dp[0][j - 1], ch2[j] == ch1[0] ? 1 : 0);
         }
 
-        for(int i = 1; i < len1; i++){
-            for(int j = 1; j < len2; j++){
-                dp[i][j] = Math.max(dp[i][j-1], dp[i-1][j]);
-                if(ch1[i] == ch2[j]){
-                    dp[i][j] = Math.max(dp[i][j], dp[i-1][j-1] + 1);
+        for (int i = 1; i < len1; i++) {
+            for (int j = 1; j < len2; j++) {
+                dp[i][j] = Math.max(dp[i][j - 1], dp[i - 1][j]);
+                if (ch1[i] == ch2[j]) {
+                    dp[i][j] = Math.max(dp[i][j], dp[i - 1][j - 1] + 1);
                 }
             }
         }
@@ -64,12 +64,12 @@ public class MaxComSeqOfTwoStr {
         char[] ch = new char[maxLen];
         int index = maxLen - 1;
 
-        while(index >= 0){
-            if(m > 0 && dp[m][n] == dp[m-1][n]){
+        while (index >= 0) {
+            if (m > 0 && dp[m][n] == dp[m - 1][n]) {
                 m--;
-            }else if(n > 0 && dp[m][n] == dp[m][n-1]){
+            } else if (n > 0 && dp[m][n] == dp[m][n - 1]) {
                 n--;
-            }else{
+            } else {
                 ch[index--] = ch1[m];
                 m--;
                 n--;

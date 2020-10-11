@@ -16,8 +16,8 @@ public class Problem31_StackPusPopSeq {
         System.out.println(isPushPopOrder(seq1, seq3));
     }
 
-    private static boolean isPushPopOrder(int[] seq1, int[] seq2){
-        if(seq1 == null || seq2 == null || seq1.length != seq2.length){
+    private static boolean isPushPopOrder(int[] seq1, int[] seq2) {
+        if (seq1 == null || seq2 == null || seq1.length != seq2.length) {
             return false;
         }
 
@@ -27,14 +27,14 @@ public class Problem31_StackPusPopSeq {
         int index = 0;
         stack.push(seq1[index++]);
 
-        for(int i = 0; i < seq2.length;){
-            if(seq2[i] == stack.peek()){
+        for (int i = 0; i < seq2.length; ) {
+            if (seq2[i] == stack.peek()) {
                 i++;
                 stack.pop();
-            }else{
-                if(index < seq1.length){
+            } else {
+                if (index < seq1.length) {
                     stack.push(seq1[index++]);
-                }else{
+                } else {
                     return false;
                 }
             }

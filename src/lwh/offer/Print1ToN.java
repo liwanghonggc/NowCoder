@@ -15,7 +15,7 @@ public class Print1ToN {
     }
 
     private static void printMax(int num) {
-        if(num <= 0){
+        if (num <= 0) {
             return;
         }
         char[] chs = new char[num];
@@ -24,12 +24,12 @@ public class Print1ToN {
     }
 
     private static void printRecur(char[] chs, int loc, int len) {
-        if(loc == len){
+        if (loc == len) {
             return;
         }
-        for(int i = 0; i <= 9; i++){
-            chs[loc] = (char)('0' + i);
-            if(loc == len - 1){
+        for (int i = 0; i <= 9; i++) {
+            chs[loc] = (char) ('0' + i);
+            if (loc == len - 1) {
                 printChar(chs);
             }
             printRecur(chs, loc + 1, len);
@@ -38,15 +38,15 @@ public class Print1ToN {
 
     private static void printChar(char[] chs) {
         int i = 0;
-        for( ; i < chs.length; i++){
-            if(chs[i] != '0'){
+        for (; i < chs.length; i++) {
+            if (chs[i] != '0') {
                 break;
             }
         }
-        if(i == chs.length){
+        if (i == chs.length) {
             return;
         }
-        for(int j = i; j < chs.length; j++){
+        for (int j = i; j < chs.length; j++) {
             System.out.print(chs[j]);
         }
         System.out.println();

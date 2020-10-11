@@ -51,7 +51,7 @@ public class ArraySort3 {
      * 非递归快速排序
      */
     private static void fastSort2(int[] a, int low, int high) {
-        if(low >= high){
+        if (low >= high) {
             return;
         }
 
@@ -59,18 +59,18 @@ public class ArraySort3 {
         stack.push(low);
         stack.push(high);
 
-        while (!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             high = stack.pop();
             low = stack.pop();
 
             int pivot = partition(a, low, high);
 
-            if(low < pivot - 1){
+            if (low < pivot - 1) {
                 stack.push(low);
                 stack.push(pivot - 1);
             }
 
-            if(pivot + 1 < high){
+            if (pivot + 1 < high) {
                 stack.push(pivot + 1);
                 stack.push(high);
             }
@@ -80,13 +80,13 @@ public class ArraySort3 {
     /**
      * 堆排序
      */
-    public static void heapSort(int[] arr){
-        if(arr == null || arr.length < 2){
+    public static void heapSort(int[] arr) {
+        if (arr == null || arr.length < 2) {
             return;
         }
         buildHeap(arr);
         int heapSize = arr.length;
-        while (heapSize > 1){
+        while (heapSize > 1) {
             heapSize--;
             int temp = arr[heapSize];
             arr[heapSize] = arr[0];
@@ -97,7 +97,7 @@ public class ArraySort3 {
 
     private static void buildHeap(int[] arr) {
         int heapSize = arr.length;
-        for(int i = heapSize / 2 - 1; i >= 0; i--){
+        for (int i = heapSize / 2 - 1; i >= 0; i--) {
             heapify(arr, i, heapSize);
         }
     }
@@ -108,14 +108,14 @@ public class ArraySort3 {
 
         int max = i;
 
-        if(lChild < heapSize && arr[lChild] > arr[max]){
+        if (lChild < heapSize && arr[lChild] > arr[max]) {
             max = lChild;
         }
-        if(rChild < heapSize && arr[rChild] > arr[max]){
+        if (rChild < heapSize && arr[rChild] > arr[max]) {
             max = rChild;
         }
 
-        if(max != i){
+        if (max != i) {
             int temp = arr[max];
             arr[max] = arr[i];
             arr[i] = temp;

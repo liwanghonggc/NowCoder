@@ -15,8 +15,8 @@ public class FullPermuta {
         printFull(str);
     }
 
-    private static void printFull(String str){
-        if(str == null || str.length() == 0){
+    private static void printFull(String str) {
+        if (str == null || str.length() == 0) {
             return;
         }
         char[] chs = str.toCharArray();
@@ -24,10 +24,10 @@ public class FullPermuta {
     }
 
     private static void printFullRecur(char[] chs, int i) {
-        if(i == chs.length){
+        if (i == chs.length) {
             System.out.println(new String(chs));
-        }else{
-            for(int j = i; j < chs.length; j++){
+        } else {
+            for (int j = i; j < chs.length; j++) {
                 swap(chs, i, j);
                 printFullRecur(chs, i + 1);
                 swap(chs, i, j);

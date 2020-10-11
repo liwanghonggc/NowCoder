@@ -6,10 +6,10 @@ import java.util.Queue;
 public class Problem_80_SameTree_Easy {
 
     public static boolean isSameTree_1(TreeNode p, TreeNode q) {
-        if(p == null && q == null){
+        if (p == null && q == null) {
             return true;
         }
-        if((p != null && q == null) || (p == null && q != null)){
+        if ((p != null && q == null) || (p == null && q != null)) {
             return false;
         }
 
@@ -18,33 +18,33 @@ public class Problem_80_SameTree_Easy {
         q1.add(p);
         q2.add(q);
 
-        while(!q1.isEmpty() && !q2.isEmpty()){
+        while (!q1.isEmpty() && !q2.isEmpty()) {
             p = q1.poll();
             q = q2.poll();
 
-            if(p.val != q.val){
+            if (p.val != q.val) {
                 return false;
             }
 
-            if(p.left != null && q.left != null){
-                if(p.left.val != q.left.val){
+            if (p.left != null && q.left != null) {
+                if (p.left.val != q.left.val) {
                     return false;
                 }
                 q1.add(p.left);
                 q2.add(q.left);
             }
-            if((p.left != null && q.left == null) || (p.left == null && q.left != null)){
+            if ((p.left != null && q.left == null) || (p.left == null && q.left != null)) {
                 return false;
             }
 
-            if(p.right != null && q.right != null){
-                if(p.right.val != q.right.val){
+            if (p.right != null && q.right != null) {
+                if (p.right.val != q.right.val) {
                     return false;
                 }
                 q1.add(p.right);
                 q2.add(q.right);
             }
-            if((p.right != null && q.right == null) || (p.right == null && q.right != null)){
+            if ((p.right != null && q.right == null) || (p.right == null && q.right != null)) {
                 return false;
             }
         }

@@ -15,19 +15,21 @@ public class Problem9_TwoStackGetQueue {
 
     /**
      * 入队操作,直接将元素放到stack1中
+     *
      * @param num
      */
-    public void addToTail(Integer num){
+    public void addToTail(Integer num) {
         stack1.push(num);
     }
 
     /**
      * 出队操作,若stack2非空,直接从Stack2中弹出一个元素;若Stack2为空,将stack1中元素依此弹出放入stack2中
+     *
      * @return
      */
-    public Integer getNumFormHead(){
-        if(stack2.isEmpty()){
-            while(!stack1.isEmpty()){
+    public Integer getNumFormHead() {
+        if (stack2.isEmpty()) {
+            while (!stack1.isEmpty()) {
                 int num = stack1.pop();
                 stack2.push(num);
             }

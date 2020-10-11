@@ -12,7 +12,7 @@ public class Problem_67_AddBinary_Easy {
         int index = 0;
         int n1 = 0, n2 = 0;
 
-        while(i >= 0 || j >= 0){
+        while (i >= 0 || j >= 0) {
             n1 = (i >= 0) ? chs1[i] - 48 : 0;
             n2 = (j >= 0) ? chs2[j] - 48 : 0;
 
@@ -24,7 +24,7 @@ public class Problem_67_AddBinary_Easy {
             sb.append(res);
         }
 
-        if(index != 0){
+        if (index != 0) {
             sb.append(index);
         }
 

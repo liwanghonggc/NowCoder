@@ -14,7 +14,7 @@ public class Problem15_NumOfOne {
 
     private static int numOfOne(int num) {
         int count = 0;
-        while (num > 0){
+        while (num > 0) {
             ++count;
             num = (num - 1) & num;
         }

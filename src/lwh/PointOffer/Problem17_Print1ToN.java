@@ -38,6 +38,7 @@ public class Problem17_Print1ToN {
 
     /**
      * 去除前面的0之后输出,如char[] ch = {'0', '2', '1'},输出21
+     *
      * @param num
      */
     public static void printNumber(char[] num) {

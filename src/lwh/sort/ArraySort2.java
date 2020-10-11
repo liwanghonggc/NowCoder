@@ -3,14 +3,14 @@ package lwh.sort;
 public class ArraySort2 {
 
     // 冒泡
-    public static void bubbleSort(int[] arr){
-        if(arr == null || arr.length <= 1){
+    public static void bubbleSort(int[] arr) {
+        if (arr == null || arr.length <= 1) {
             return;
         }
 
-        for(int i = 0; i < arr.length - 1; i++){
-            for(int j = 0; j < arr.length - i - 1; j++){
-                if(arr[j] > arr[j+1]){
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
                     swap(arr, j, j + 1);
                 }
             }
@@ -18,19 +18,19 @@ public class ArraySort2 {
     }
 
     // 选择
-    public static void selectSort(int[] arr){
-        if(arr == null || arr.length <= 1){
+    public static void selectSort(int[] arr) {
+        if (arr == null || arr.length <= 1) {
             return;
         }
 
-        for(int i = 0; i < arr.length - 1; i++){
+        for (int i = 0; i < arr.length - 1; i++) {
             int minIndex = i;
-            for(int j = i + 1; j < arr.length; j++){
-                if(arr[j] < arr[minIndex]){
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[minIndex]) {
                     minIndex = j;
                 }
             }
-            if(minIndex != i){
+            if (minIndex != i) {
                 swap(arr, i, minIndex);
             }
         }
@@ -39,8 +39,8 @@ public class ArraySort2 {
     // 插入
 
     // 快排
-    public static void fastSort(int[] arr){
-        if(arr == null || arr.length <= 1){
+    public static void fastSort(int[] arr) {
+        if (arr == null || arr.length <= 1) {
             return;
         }
 
@@ -48,7 +48,7 @@ public class ArraySort2 {
     }
 
     private static void doFastSort(int[] arr, int left, int right) {
-        if(left >= right){
+        if (left >= right) {
             return;
         }
 
@@ -60,8 +60,8 @@ public class ArraySort2 {
     private static int getPivotIndex(int[] arr, int left, int right) {
         int pivot = arr[right];
         int tail = left - 1;
-        for(int i = left; i < right; i++){
-            if(arr[i] <= pivot){
+        for (int i = left; i < right; i++) {
+            if (arr[i] <= pivot) {
                 swap(arr, ++tail, i);
             }
         }
@@ -70,8 +70,8 @@ public class ArraySort2 {
     }
 
     // 归并
-    public static void mergeSort(int[] arr){
-        if(arr != null && arr.length <= 1){
+    public static void mergeSort(int[] arr) {
+        if (arr != null && arr.length <= 1) {
             return;
         }
 
@@ -79,7 +79,7 @@ public class ArraySort2 {
     }
 
     private static void mergeSortRecursive(int[] arr, int left, int right) {
-        if(left >= right){
+        if (left >= right) {
             return;
         }
 
@@ -95,23 +95,23 @@ public class ArraySort2 {
         int i = left;
         int j = mid + 1;
         int index = 0;
-        while(i <= mid && j <= right){
+        while (i <= mid && j <= right) {
             temp[index++] = arr[i] <= arr[j] ? arr[i++] : arr[j++];
         }
-        while(i <= mid){
+        while (i <= mid) {
             temp[index++] = arr[i++];
         }
-        while(j <= right){
+        while (j <= right) {
             temp[index++] = arr[j++];
         }
-        for(int k = 0; k < len; k++){
+        for (int k = 0; k < len; k++) {
             arr[left++] = temp[k];
         }
     }
 
     // 堆排序
 
-    private static void swap(int[] arr, int i, int j){
+    private static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;

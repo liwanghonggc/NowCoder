@@ -3,7 +3,7 @@ package lwh.leetcode;
 public class Problem_203_RemoveLinkedListElements_Easy {
 
     public static ListNode removeElements(ListNode head, int val) {
-        if(head == null){
+        if (head == null) {
             return null;
         }
 
@@ -11,17 +11,17 @@ public class Problem_203_RemoveLinkedListElements_Easy {
         preHead.next = head;
 
         ListNode p = head;
-        while(p != null && p.val == val){
+        while (p != null && p.val == val) {
             p = p.next;
         }
-        if(p == null){
+        if (p == null) {
             return null;
         }
         preHead.next = p;
 
         ListNode q = p.next;
-        while(q != null){
-            if(q.val != val){
+        while (q != null) {
+            if (q.val != val) {
                 p.next = q;
                 p = q;
             }

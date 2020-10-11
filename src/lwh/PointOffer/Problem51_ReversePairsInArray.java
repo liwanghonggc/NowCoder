@@ -7,13 +7,13 @@ public class Problem51_ReversePairsInArray {
         System.out.println(getNumOfReversePairs(arr));
     }
 
-    private static int getNumOfReversePairs(int[] arr){
-        if(arr == null || arr.length < 2){
+    private static int getNumOfReversePairs(int[] arr) {
+        if (arr == null || arr.length < 2) {
             return 0;
         }
 
         int[] copy = new int[arr.length];
-        for(int i = 0; i < arr.length; i++){
+        for (int i = 0; i < arr.length; i++) {
             copy[i] = arr[i];
         }
 
@@ -23,7 +23,7 @@ public class Problem51_ReversePairsInArray {
     }
 
     private static int inversePairs(int[] arr, int[] copy, int start, int end) {
-        if(start == end){
+        if (start == end) {
             return 0;
         }
 
@@ -40,20 +40,20 @@ public class Problem51_ReversePairsInArray {
         int indexCopy = end;
 
         int count = 0;
-        while(i >= start && j >= start + length + 1){
-            if(arr[i] > arr[j]){
+        while (i >= start && j >= start + length + 1) {
+            if (arr[i] > arr[j]) {
                 copy[indexCopy--] = arr[i--];
                 count += j - start - length;
-            }else{
+            } else {
                 copy[indexCopy--] = arr[j--];
             }
         }
 
-        for(; i >= start; i--){
+        for (; i >= start; i--) {
             copy[indexCopy--] = arr[i];
         }
 
-        for(; j >= start + length + 1; j--){
+        for (; j >= start + length + 1; j--) {
             copy[indexCopy--] = arr[j];
         }
 

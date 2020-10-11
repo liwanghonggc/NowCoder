@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class FindContinuousSequence {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         ArrayList<ArrayList<Integer>> res = FindContinuousSequence(100);
-        for(ArrayList<Integer> tmp : res){
+        for (ArrayList<Integer> tmp : res) {
             System.out.println(tmp);
         }
     }
@@ -14,7 +14,7 @@ public class FindContinuousSequence {
     public static ArrayList<ArrayList<Integer>> FindContinuousSequence(int sum) {
         ArrayList<ArrayList<Integer>> list = new ArrayList<>();
 
-        if(sum < 3){
+        if (sum < 3) {
             return list;
         }
 
@@ -23,16 +23,16 @@ public class FindContinuousSequence {
         int mid = (sum + 1) / 2;
         int curSum = small + big;
 
-        while(small < mid){
-            if(curSum == sum){
+        while (small < mid) {
+            if (curSum == sum) {
                 addNumtoList(small, big, list);
             }
 
-            while(curSum > sum && small < mid){
+            while (curSum > sum && small < mid) {
                 curSum -= small;
                 small++;
 
-                if(curSum == sum){
+                if (curSum == sum) {
                     addNumtoList(small, big, list);
                 }
             }
@@ -44,9 +44,9 @@ public class FindContinuousSequence {
         return list;
     }
 
-    private static void addNumtoList(int small, int big, ArrayList<ArrayList<Integer>> list){
+    private static void addNumtoList(int small, int big, ArrayList<ArrayList<Integer>> list) {
         ArrayList<Integer> temp = new ArrayList<>();
-        for(int i = small; i <= big; i++){
+        for (int i = small; i <= big; i++) {
             temp.add(i);
         }
         list.add(temp);

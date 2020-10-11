@@ -12,10 +12,10 @@ public class Power {
     }
 
     private static double power(double base, int exponent) {
-        if(exponent == 0){
+        if (exponent == 0) {
             return 1;
         }
-        if(exponent == 1){
+        if (exponent == 1) {
             return base;
         }
 
@@ -23,10 +23,10 @@ public class Power {
         double result = power(base, n >> 1);
         result *= result;
 
-        if((n & 1) == 1){
+        if ((n & 1) == 1) {
             result *= base;
         }
-        if (exponent < 0){
+        if (exponent < 0) {
             result = 1 / result;
         }
         return result;

@@ -10,8 +10,8 @@ public class RotateString {
         rotateString(str1.toCharArray(), 5);
     }
 
-    public static void rotateString(char[] chs, int n){
-        if(chs == null || chs.length == 0){
+    public static void rotateString(char[] chs, int n) {
+        if (chs == null || chs.length == 0) {
             return;
         }
         n = n % chs.length;
@@ -22,8 +22,8 @@ public class RotateString {
         System.out.println(Arrays.toString(chs));
     }
 
-    public static void rotate(char[] chs, int left, int right){
-        while(left < right){
+    public static void rotate(char[] chs, int left, int right) {
+        while (left < right) {
             char temp = chs[left];
             chs[left] = chs[right];
             chs[right] = temp;

@@ -18,11 +18,11 @@ public class Problem41_MedianHolder {
 
 }
 
-class MedianHolder{
+class MedianHolder {
     private PriorityQueue<Integer> minHeap;
     private PriorityQueue<Integer> maxHeap;
 
-    public MedianHolder(){
+    public MedianHolder() {
         this.minHeap = new PriorityQueue<>();
         this.maxHeap = new PriorityQueue<>(new Comparator<Integer>() {
             @Override
@@ -32,21 +32,21 @@ class MedianHolder{
         });
     }
 
-    public void addNum(int num){
-        if(maxHeap.isEmpty()){
+    public void addNum(int num) {
+        if (maxHeap.isEmpty()) {
             maxHeap.add(num);
             return;
         }
-        if(maxHeap.peek() >= num){
+        if (maxHeap.peek() >= num) {
             maxHeap.add(num);
-        }else{
-            if(minHeap.isEmpty()){
+        } else {
+            if (minHeap.isEmpty()) {
                 minHeap.add(num);
                 return;
             }
-            if(minHeap.peek() > num){
+            if (minHeap.peek() > num) {
                 maxHeap.add(num);
-            }else{
+            } else {
                 minHeap.add(num);
             }
         }
@@ -54,31 +54,31 @@ class MedianHolder{
         modifyTwoHeap();
     }
 
-    public Integer getMedian(){
+    public Integer getMedian() {
         int maxSize = maxHeap.size();
         int minSize = minHeap.size();
 
         int len = maxSize + minSize;
-        if(len == 0){
+        if (len == 0) {
             return null;
         }
         Integer maxHeap = this.maxHeap.peek();
         Integer minHeap = this.minHeap.peek();
 
-        if(len % 2 == 0){
+        if (len % 2 == 0) {
             return (maxHeap + minHeap) / 2;
-        }else if(maxSize > minSize){
+        } else if (maxSize > minSize) {
             return maxHeap;
-        }else{
+        } else {
             return minHeap;
         }
     }
 
-    private void modifyTwoHeap(){
-        if(this.maxHeap.size() == this.minHeap.size() + 2){
+    private void modifyTwoHeap() {
+        if (this.maxHeap.size() == this.minHeap.size() + 2) {
             this.minHeap.add(this.maxHeap.poll());
         }
-        if(this.minHeap.size() == this.maxHeap.size() + 2){
+        if (this.minHeap.size() == this.maxHeap.size() + 2) {
             this.maxHeap.add(this.minHeap.poll());
         }
     }

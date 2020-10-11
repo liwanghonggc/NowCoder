@@ -1,7 +1,9 @@
 package lwh.leetcode;
 
 import java.util.Stack;
-
+/**
+ *
+ */
 public class Problem_155_MinStack_Easy {
 
     static class MinStack {
@@ -16,13 +18,13 @@ public class Problem_155_MinStack_Easy {
 
         public void push(int x) {
             stack.push(x);
-            if(help.isEmpty()){
+            if (help.isEmpty()) {
                 help.push(x);
-            }else{
+            } else {
                 int temp = help.peek();
-                if(temp < x){
+                if (temp < x) {
                     help.push(temp);
-                }else{
+                } else {
                     help.push(x);
                 }
             }

@@ -10,8 +10,8 @@ public class ProductOfNumInArray {
         System.out.println(Arrays.toString(res));
     }
 
-    private static int[] product1(int[] arr){
-        if(arr == null || arr.length < 2){
+    private static int[] product1(int[] arr) {
+        if (arr == null || arr.length < 2) {
             return null;
         }
 
@@ -19,23 +19,23 @@ public class ProductOfNumInArray {
         int allPro = 1;
         int[] res = new int[arr.length];
 
-        for(int i = 0; i < arr.length; i++){
-            if(arr[i] != i){
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != i) {
                 allPro *= arr[i];
-            }else{
+            } else {
                 count++;
             }
         }
 
-        if(count == 0){
-            for(int i = 0; i < arr.length; i++){
+        if (count == 0) {
+            for (int i = 0; i < arr.length; i++) {
                 res[i] = allPro / arr[i];
             }
         }
 
-        if(count == 1){
-            for(int i = 0; i < arr.length; i++){
-                if(arr[i] != 0){
+        if (count == 1) {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] != 0) {
                     res[i] = allPro;
                 }
             }

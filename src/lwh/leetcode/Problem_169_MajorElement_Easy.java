@@ -1,7 +1,9 @@
 package lwh.leetcode;
 
 import java.util.*;
-
+/**
+ *
+ */
 public class Problem_169_MajorElement_Easy {
 
     public static int majorityElement_1(int[] nums) {
@@ -11,11 +13,11 @@ public class Problem_169_MajorElement_Easy {
 
     public static int majorityElement_2(int[] nums) {
         Map<Integer, Integer> map = new HashMap<>();
-        for(int i = 0; i < nums.length; i++){
-            if(map.containsKey(nums[i])){
+        for (int i = 0; i < nums.length; i++) {
+            if (map.containsKey(nums[i])) {
                 int count = map.get(nums[i]);
                 map.put(nums[i], ++count);
-            }else{
+            } else {
                 map.put(nums[i], 1);
             }
         }
@@ -25,9 +27,9 @@ public class Problem_169_MajorElement_Easy {
 
         int max = 0;
         int majorElement = 0;
-        while(it.hasNext()){
+        while (it.hasNext()) {
             Map.Entry<Integer, Integer> entry = it.next();
-            if(entry.getValue() > max){
+            if (entry.getValue() > max) {
                 max = entry.getValue();
                 majorElement = entry.getKey();
             }
@@ -50,7 +52,7 @@ public class Problem_169_MajorElement_Easy {
     }
 
     public static void main(String[] args) {
-        int[] nums = {2,2,1,1,1,2,2};
+        int[] nums = {2, 2, 1, 1, 1, 2, 2};
         System.out.println(majorityElement_3(nums));
     }
 }

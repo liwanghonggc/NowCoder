@@ -8,7 +8,7 @@ public class TreeNode {
 
     TreeNode right;
 
-    TreeNode(int x){
+    TreeNode(int x) {
         val = x;
     }
 }

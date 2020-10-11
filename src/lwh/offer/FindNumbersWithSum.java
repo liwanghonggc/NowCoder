@@ -11,22 +11,22 @@ public class FindNumbersWithSum {
         System.out.println(list);
     }
 
-    public static ArrayList<Integer> FindNumbersWithSum(int [] array,int sum) {
+    public static ArrayList<Integer> FindNumbersWithSum(int[] array, int sum) {
         ArrayList<Integer> list = new ArrayList<>();
 
-        if(array == null || array.length < 1){
+        if (array == null || array.length < 1) {
             return list;
         }
 
-        for(int i = 0, j = array.length - 1; i < j; ){
+        for (int i = 0, j = array.length - 1; i < j; ) {
             int curSum = array[i] + array[j];
-            if(curSum == sum){
+            if (curSum == sum) {
                 list.add(array[i]);
                 list.add(array[j]);
                 return list;
-            }else if(curSum < sum){
+            } else if (curSum < sum) {
                 i++;
-            }else {
+            } else {
                 j--;
             }
         }

@@ -9,19 +9,19 @@ public class Problem53_FindIndexEqualNumInSortArray {
     }
 
     private static int findIndex(int[] arr) {
-        if(arr == null || arr.length == 0){
+        if (arr == null || arr.length == 0) {
             return -1;
         }
 
         int left = 0;
         int right = arr.length - 1;
-        while(left <= right){
+        while (left <= right) {
             int mid = left + ((right - left) >> 1);
-            if(arr[mid] == mid){
+            if (arr[mid] == mid) {
                 return mid;
-            }else if(arr[mid] > mid){
+            } else if (arr[mid] > mid) {
                 right = mid - 1;
-            }else{
+            } else {
                 left = mid + 1;
             }
         }
